@@ -3,12 +3,17 @@ pipeline {
     stages {
         stage ('checkout source') {
             steps {
-                git branch: 'main', url: 'https://github.com/shivakrishna090696/javacode_jenkins.git'
+                git branch: 'master', url: 'https://github.com/shivakrishna090696/hello-world.git'
             }
         }
         stage ('to check maven version') {
             steps {
                 sh 'mvn --version'
+            }
+        }
+        stage ('build') {
+            steps {
+                sh 'mvn clean install'
             }
         }
     }
