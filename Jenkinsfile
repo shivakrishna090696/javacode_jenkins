@@ -6,5 +6,10 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/shivakrishna090696/javacode_jenkins.git'
             }
         }
+        stage ('to check maven version') {
+            steps {
+                sh 'mvn --version'
+            }
+        }
     }
 }
